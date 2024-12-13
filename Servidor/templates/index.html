@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard IoT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard IoT</h1>
+        <div class="date-picker">
+            <input type="text" id="date-range" placeholder="Seleccionar rango de fechas">
+            <button id="update-btn">Actualizar</button>
+        </div>
+        <h2>Promedios</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Temperatura Promedio</h3>
+                <canvas id="tempChart"></canvas>
+            </div>
+            <div class="card">
+                <h3>Humedad Promedio</h3>
+                <canvas id="humidityChart"></canvas>
+            </div>
+        </div>
+        <h2>Nodos Individuales</h2>
+        <div class="grid">
+            <div class="card">
+                <h3 id="titleNode1">Nodo 1</h3>
+                <canvas id="tempChartNode1"></canvas>
+            </div>
+            <div class="card">
+                <h3 id="titleHumNode1">Nodo 1</h3>
+                <canvas id="humidityChartNode1"></canvas>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3 id="titleNode2">Nodo 2</h3>
+                <canvas id="tempChartNode2"></canvas>
+            </div>
+            <div class="card">
+                <h3 id="titleHumNode2">Nodo 2</h3>
+                <canvas id="humidityChartNode2"></canvas>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3 id="titleNode3">Nodo 3</h3>
+                <canvas id="tempChartNode3"></canvas>
+            </div>
+            <div class="card">
+                <h3 id="titleHumNode3">Nodo 3</h3>
+                <canvas id="humidityChartNode3"></canvas>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3 id="titleNode4">Nodo 4</h3>
+                <canvas id="tempChartNode4"></canvas>
+            </div>
+            <div class="card">
+                <h3 id="titleHumNode4">Nodo 4</h3>
+                <canvas id="humidityChartNode4"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Últimos Datos Recibidos</h2>
+            <ul id="data-list"></ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
